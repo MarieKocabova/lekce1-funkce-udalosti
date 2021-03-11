@@ -1,6 +1,5 @@
 // tady je místo pro náš program
 
-document.querySelector("#vysledek").innerHTML = secti(4, 5);
 
 /**
  * Sečte dvě čísla na vstupu a vrátí výsledek
@@ -13,9 +12,25 @@ function secti(a, b) {
   return c;
 }
 
-/**
- * Upozorní uživatele při spuštění.
- */
-function upozorni() {
-  alert("Gratulace, právě jsi spustila tuto funkci!");
+let ctverecek = document.querySelector('.ctverecek')
+let alertText = 'Gratulace, právě jsi spustila tuto funkci!'
+
+//změna barvy čtverečku na zelenou
+function obarviNaZeleno() {
+  ctverecek.style.backgroundColor = "green";
 }
+
+//výsledek až po click na tlačítko
+function ukazVysledek(a, b) {
+  document.querySelector("#vysledek").innerHTML = secti(a, b);
+}
+
+//text upozorni() to konzole a čtverečku
+
+function upozorni() {
+  alert(alertText);
+  console.log(alertText);
+  ctverecek.innerHTML = (alertText);
+  ctverecek.style.width = '500px';
+}
+
